@@ -10,7 +10,7 @@ pipeline {
         }
         stage('install') {
             steps {
-                sh "clean install -f clickup"
+                sh "mvn clean install -f clickup"
             }
         }
         stage('test') {
