@@ -31,7 +31,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sshagent([4add3352-6b40-476c-b1be-2d6e394d4cd5]) {
+                sshagent(["4add3352-6b40-476c-b1be-2d6e394d4cd5"]) {
                 sh "scp clickup/target/ClickupDashboard-0.0.1-SNAPSHOT.jar 192.168.109.134:/home/clickup/backend"
                 sh "ssh clickup@192.168.109.134 'java -jar /home/clickup/backend/ClickupDashboard-0.0.1-SNAPSHOT.jar &'"
             }
