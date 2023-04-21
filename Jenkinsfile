@@ -3,11 +3,12 @@ pipeline {
 
     stages {
         stage('Stop process on port 8080') {
-            steps {
-               sh "echo 'clickup@123' | sudo -S lsof -t -i:8080 | xargs --no-run-if-empty sudo kill -9"
+           steps {
+               sh "echo 'clickup@123' | sudo -S lsof -t -i:8080 | xargs --no-run-if-empty sh -c 'echo "clickup@123" | sudo -S kill -9 "$@"' sh"
 
-          }
-          }
+          
+            }
+        }
 
         stage('git repo & clean') {
             steps {
