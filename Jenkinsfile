@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+        stage('Stop process on port 8080') {
+            steps {
+                sh 'sudo lsof -t -i:8080 | xargs --no-run-if-empty sudo kill -9'
+            }
+        }
+
         stage('git repo & clean') {
             steps {
                sh "rm -rf  /s /q clickup"
