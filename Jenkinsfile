@@ -15,7 +15,7 @@ pipeline {
                 sh "mvn clean -f clickup"
             }
         }
-        stage('install') {
+        stage('install & build') {
             steps {
                 sh "mvn clean install -f clickup"
             }
