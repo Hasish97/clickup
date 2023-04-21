@@ -19,7 +19,7 @@ import java.util.Collections;
 @EnableScheduling
 public class ClickupDashboardApplication {
 	public static void main(String[] args) {
-		S.run(ClickupDashboardApplication.class, args);
+		SpringApplication.run(ClickupDashboardApplication.class, args);
 	}
 //	@Bean
 //	public WebMvcConfigurer corsConfigurer() {
