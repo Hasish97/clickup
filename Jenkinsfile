@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage('Stop process on port 8080') {
-           steps {
-               sh "echo 'clickup@123' | sudo -S lsof -t -i:8080 | xargs --no-run-if-empty sh -c 'echo "clickup@123" | sudo -S kill -9 "$@"' sh"
+        //stage('Stop process on port 8080') {
+           //steps {
+               //sh "echo 'clickup@123' | sudo -S lsof -t -i:8080 | xargs --no-run-if-empty sh -c 'echo "clickup"@"123" | sudo -S kill -9 "$@"' sh"
 
           
-            }
-        }
+            //}
+        //}
 
         stage('git repo & clean') {
             steps {
@@ -38,7 +38,7 @@ pipeline {
                 sh "nohup java -jar /var/lib/jenkins/workspace/clickupp/clickup/target/ClickupDashboard-0.0.1-SNAPSHOT.jar"
                 
             }
-            
+        
         }
 
     }
