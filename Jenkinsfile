@@ -38,7 +38,7 @@ pipeline {
                 sh "mvn package -f clickup"
             }
         }
-        stage('Deploy&Run') {
+        stage('Deploy & Run') {
             steps {
               
                 sh "java -jar /var/lib/jenkins/workspace/clickupp/clickup/target/ClickupDashboard-0.0.1-SNAPSHOT.jar"
