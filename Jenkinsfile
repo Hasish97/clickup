@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-    YOUR_DEPLOY_SERVER = "192.168.109.134"
-    PATH_TO_DEPLOY = "/home/clickup/backend"
-  }
-
     stages {
         stage('git repo & clean') {
             steps {
@@ -31,11 +26,11 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sshagent(["4add3352-6b40-476c-b1be-2d6e394d4cd5"]) {
-                sh "cp /var/lib/jenkins/workspace/clickupp/clickup/target/ClickupDashboard-0.0.1-SNAPSHOT.jar 192.168.109.134:/home/clickup/back"
-                sh "ssh clickup@192.168.109.134 'java -jar /home/clickup/backend/ClickupDashboard-0.0.1-SNAPSHOT.jar &'"
+              
+                sh "nohup java -jar /var/lib/jenkins/workspace/clickupp/clickup/target/ClickupDashboard-0.0.1-SNAPSHOT.jar"
+                
             }
-            }
+            
         }
 
     }
