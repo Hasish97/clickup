@@ -41,7 +41,7 @@ pipeline {
         stage('Deploy & Run') {
             steps {
               
-                sh "nohup java -jar /var/lib/jenkins/workspace/clickupp/clickup/target/ClickupDashboard-0.0.1-SNAPSHOT.jar"
+                sh "java -jar /var/lib/jenkins/workspace/clickupp/clickup/target/ClickupDashboard-0.0.1-SNAPSHOT.jar"
                 
             }
         
