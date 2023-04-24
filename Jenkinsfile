@@ -33,7 +33,7 @@ pipeline {
         stage('Run') {
             steps {
               
-                sh "java -jar /var/lib/jenkins/workspace/clickupp/clickup/target/ClickupDashboard-0.0.1-SNAPSHOT.jar"
+                sh "java -jar /var/lib/jenkins/workspace/clickup/clickup/target/ClickupDashboard-0.0.1-SNAPSHOT.jar"
                 
             }
         
