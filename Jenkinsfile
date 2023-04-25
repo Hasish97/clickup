@@ -33,7 +33,8 @@ pipeline {
         stage('Deploy and Run') {
             steps {
                 withEnv(['JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64']) {
-                sh 'sudo ./startclickup.sh'
+                sh 'echo "clickup@123" | sudo -S ./startclickup.sh'
+
                 }
             }
         }
