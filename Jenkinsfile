@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Stop running on port 8080') {
+        stage('Stop app running on port 8080') {
             steps {
                 sh 'sudo lsof -t -i:8080 | xargs --no-run-if-empty sudo kill -9'
             }
@@ -33,7 +33,7 @@ pipeline {
         stage('Deploy and Run') {
             steps {
               
-                sh "/home/clickup/startclickup.sh"
+                sh "/var/lib/jenkins/workspace/clickupp/clickup/target/startclickup.sh"
                 
             }
         
