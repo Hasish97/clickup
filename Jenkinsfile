@@ -33,7 +33,7 @@ pipeline {
         stage('Deploy and Run') {
             steps {
               
-                sh "./startclickup.sh"
+                sh "/home/clickup/startclickup.sh"
                 
             }
         
