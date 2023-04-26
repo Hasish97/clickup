@@ -36,7 +36,7 @@ pipeline {
                 //sh 'cd /var/lib/jenkins/workspace/clickupp/clickup && sudo -u jenkins ./startclickup.sh'
                 sh 'sudo ./startclickup.sh'
 
-                }
+                //}
             }
         }
         //stage('Deploy and Run') {
