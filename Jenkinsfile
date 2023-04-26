@@ -32,8 +32,9 @@ pipeline {
         }
         stage('Deploy and Run') {
             steps {
-                withEnv(['JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64']) {
-                sh 'cd /var/lib/jenkins/workspace/clickupp/clickup && sudo -u jenkins ./startclickup.sh'
+                //withEnv(['JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64']) {
+                //sh 'cd /var/lib/jenkins/workspace/clickupp/clickup && sudo -u jenkins ./startclickup.sh'
+                sh 'sudo ./startclickup.sh'
 
                 }
             }
